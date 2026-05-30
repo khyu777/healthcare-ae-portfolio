@@ -28,6 +28,7 @@ SELECT
     hgi.has_emergency_services,
     hgi.is_birthing_friendly,
     hgi.overall_rating,
+    cad.measure_id,
     cad.measure_name,
     CASE
         WHEN compared_to_national LIKE 'Better%'
