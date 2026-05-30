@@ -1,0 +1,9 @@
+version: 2
+
+models:
+  - name: mart_mortality_performance
+    columns:
+      - name: hospital_id
+        tests:
+          - not_null
+          - unique
