@@ -1,9 +1,29 @@
 version: 2
 
 models:
-  - name: mart_mortality_performance
+  - name: dim_hospitals
     columns:
       - name: hospital_id
         tests:
           - not_null
           - unique
+  - name: dim_measures
+    columns:
+      - name: measure_id
+        tests:
+          - not_null
+          - unique
+  - name: fct_quality_measures
+    columns:
+      - name: hospital_id
+        tests:
+          - not_null
+      - name: measure_id
+        tests:
+          - not_null
+    tests:
+      - dbt_utils.unique_combination_of_columns:
+          arguments:
+            combination_of_columns:
+              - hospital_id
+              - measure_id
