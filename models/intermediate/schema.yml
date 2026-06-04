@@ -1,7 +1,7 @@
 version: 2
 
 models:
-  - name: int_hospital_quality_scores
+  - name: int_complications_categorized
     columns:
       - name: hospital_id
         tests:
